@@ -31,6 +31,14 @@ module Bot
     end
   end
 
+  class PicHelp < SlackRubyBot::Commands::Base
+    command 'pic help'
+
+    def self.call(client, data, _match)
+      send_message(client, data.channel, 'Go here for info: https://gist.github.com/maclover7/0e72962829e7445b976b')
+    end
+  end
+
   class PicList < SlackRubyBot::Commands::Base
     command 'pic list'
 

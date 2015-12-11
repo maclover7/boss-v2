@@ -5,6 +5,8 @@ A new and improved chat bot.
 ## Commands:
 
 - `boss gif me QUERY` --> will return a GIF from Giphy that it searches for with your query.
+- `boss pic help` --> will return a link to guide that will help you in
+  uploading images.
 - `boss pic list` --> will return the total # of pic keywords, and the
   number of pictures for each keyword.
 - `boss pic me QUERY` --> will return a photo/GIF from Cloudinary and
