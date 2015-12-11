@@ -31,6 +31,21 @@ module Bot
     end
   end
 
+  class PicList < SlackRubyBot::Commands::Base
+    command 'pic list'
+
+    def self.call(client, data, _match)
+      keys = REDIS_CONN.keys
+      sorted_keys = keys.sort! { |x, y| y <=> x }
+      send_message(client, data.channel, "There are currently #{keys.count} keywords available.")
+
+      sorted_keys.each do |key|
+        photo_count = REDIS_CONN.smembers(key).count
+        send_message(client, data.channel, "*#{key}*: #{photo_count} photos")
+      end
+    end
+  end
+
   class PicMe < SlackRubyBot::Commands::Base
     command 'pic me'
 
