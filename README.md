@@ -11,7 +11,7 @@ A new and improved chat bot.
   number of pictures for each keyword.
 - `boss pic me QUERY` --> will return a photo/GIF from Cloudinary and
   Redis that matches your query keyword.
-- `boss pic add KEYWORD: URL` --> will store the photo with URL in
+- `boss pic add KEYWORD URL` --> will store the photo with URL in
   Cloudinary and Redis, under the KEYWORD provided, for later use.
 - `boss ping` --> will return pong.
 - `boss swanson me` --> will return a Ron Swanson GIF from Giphy.

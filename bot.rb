@@ -17,7 +17,7 @@ module Bot
     command 'pic add'
 
     def self.call(client, data, match)
-      raw = match.to_a[3].split(": ")
+      raw = match.to_a[3].split(" ")
       keyword = raw[0]
       url = raw[1].delete!('<').delete!('>')
 
@@ -26,8 +26,7 @@ module Bot
       REDIS_CONN.sadd(keyword, [photo_url])
 
       keyword_total = REDIS_CONN.smembers(keyword).count
-      send_message(client, data.channel, "Photo added successfully to #{keyword}, 
-                   bringing the total number of pictures for #{keyword} to #{keyword_total}.")
+      send_message(client, data.channel, "Photo added successfully to #{keyword},  bringing the total number of pictures for `#{keyword}` to #{keyword_total}.")
     end
   end
 
