@@ -12,8 +12,19 @@ module Bot
   end
 
   class Ping < SlackRubyBot::Commands::Base
+    command 'ping'
+
     def self.call(client, data, _match)
       client.message(text: 'pong', channel: data.channel)
+    end
+  end
+
+  class Gif < SlackRubyBot::Commands::Base
+    command 'gif me'
+
+    def self.call(client, data, _match)
+      keyword = _match.to_a[3]
+      send_gif(client, data.channel, keyword)
     end
   end
 end
