@@ -6,3 +6,4 @@ A new and improved chat bot.
 
 - `boss ping` --> will return pong
 - `boss gif me QUERY` --> will return a GIF from Giphy that it searches for with your query
+- `boss swanson me` --> will return a Ron Swanson GIF from Giphy
