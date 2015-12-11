@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cloudinary'
 gem 'slack-ruby-bot'
 gem 'puma'
 gem 'sinatra'
